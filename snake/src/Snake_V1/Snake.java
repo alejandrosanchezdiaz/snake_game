@@ -8,7 +8,9 @@ public class Snake {
 
     List<Point> snakePoints;
     int xDir, yDir;
+    boolean isMoving, elongate;
 
+    final int SIZE = 20, STARTX = 150, STARTY = 150;
 
 
 
@@ -17,6 +19,9 @@ public class Snake {
         snakePoints = new ArrayList<Point>();
         xDir = 0;
         yDir = 0;
+        isMoving = false;
+        elongate = false;
+        snakePoints.
 
     }
 
@@ -26,6 +31,33 @@ public class Snake {
             g.fillRect(p.getX(), p.getY(), 4,4);
         }
     }
+
+    public int getxDir() {
+        return xDir;
+    }
+
+    public void setxDir(int x) {
+        this.xDir = x;
+    }
+
+    public int getyDir() {
+        return yDir;
+    }
+
+    public void setyDir(int y) {
+        this.yDir = y;
+    }
+    //X position of head of snake
+    public int getX(){
+        return snakePoints.get(0).getX();
+    }
+
+    public int getY(){
+        return snakePoints.get(0).getY();
+    }
+
+
+
 
 
 }
