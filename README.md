@@ -1,7 +1,8 @@
 <h1> SNAKE GAME </h1>
 
-<h2> My first Java game </h2>
+<h2> My first game with Java </h2>
 
+<h5> In order to use the Applet, I needed to use JDK 8. Applets are no longer availables in JDK 11</h5>
 
 <h6>Version 1.0</h6>
 <p>I created this little Java game using Applet for the first time. Finally, the snake is moving through the screen!</p>
