@@ -35,6 +35,7 @@ public class Token {
             if(snakeY >= y - 1 && snakeY <= (y + 7)){
                 changePosition();
                 score++;
+                snake.setElongate(true);
                 return true;
             }
         }
