@@ -10,7 +10,7 @@ public class Snake {
     int xDir, yDir;
     boolean isMoving, elongate;
 
-    final int SIZE = 20, STARTX = 150, STARTY = 150;
+    final int STARTSIZE = 20, STARTX = 150, STARTY = 150;
 
 
 
@@ -21,8 +21,10 @@ public class Snake {
         yDir = 0;
         isMoving = false;
         elongate = false;
-        snakePoints.
-
+        snakePoints.add(new Point(STARTX, STARTY));
+        for(int i = 1; i < STARTSIZE; i++){
+            snakePoints.add(new Point(STARTX - i * 4, STARTY));
+        }
     }
 
     public void draw(Graphics g){
