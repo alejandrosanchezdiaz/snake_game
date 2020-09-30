@@ -16,3 +16,7 @@
 
 <h6>Version 2.0</h6>
 <p>Last update. Once the snake "dies" it will appear "Game Over" and your Score (number of tokens collected).</p>
+
+
+<img src="https://i.ibb.co/JphTkV8/Captura-de-pantalla-2020-09-30-a-las-17-05-11.png" alt="" width="500" height="600">
+<img src="https://i.ibb.co/Bs723yV/Captura-de-pantalla-2020-09-30-a-las-17-05-41.png" alt="" width="500" height="600">
