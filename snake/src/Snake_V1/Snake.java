@@ -9,7 +9,6 @@ public class Snake {
     List<Point> snakePoints;
     int xDir, yDir;
     boolean isMoving, elongate;
-
     final int STARTSIZE = 20, STARTX = 150, STARTY = 150;
 
     public Snake() {
@@ -32,13 +31,23 @@ public class Snake {
     }
 
     public void move() {
-        Point temp = snakePoints.get(0);
-        Point last = snakePoints.get(snakePoints.size() - 1);
-        Point newStart = new Point(temp.getX() + xDir * 4, temp.getY() + yDir * 4);
-        for(int i = snakePoints.size() - 1; i >= 1; i--){
-            snakePoints.set(i, snakePoints.get(i - 1));
+        if(isMoving){
+            Point temp = snakePoints.get(0);
+            Point last = snakePoints.get(snakePoints.size() - 1);
+            Point newStart = new Point(temp.getX() + xDir * 4, temp.getY() + yDir * 4);
+            for(int i = snakePoints.size() - 1; i >= 1; i--){
+                snakePoints.set(i, snakePoints.get(i - 1));
+            }
+            snakePoints.set(0, newStart);
         }
-        snakePoints.set(0, newStart);
+    }
+
+    public boolean isMoving(){
+        return isMoving;
+    }
+
+    public void setIsMoving(boolean b){
+        isMoving = b;
     }
 
     public int getXDir() {

@@ -17,6 +17,7 @@ public class SnakeGame extends Applet implements Runnable, KeyListener {
         this.resize(400, 400);
         img = createImage(400,400);
         gfx = img.getGraphics();
+        this.addKeyListener(this);
         snake = new Snake();
         thread = new Thread(this);
         thread.start();
@@ -51,6 +52,14 @@ public class SnakeGame extends Applet implements Runnable, KeyListener {
     }
 
     public void keyPressed(KeyEvent e) {
+
+        if (!snake.isMoving()){
+            if(e.getKeyCode() == KeyEvent.VK_UP || e.getKeyCode() == KeyEvent.VK_RIGHT ||
+                    e.getKeyCode() == KeyEvent.VK_DOWN){
+                snake.setIsMoving(true);
+            }
+        }
+
         if(e.getKeyCode() == KeyEvent.VK_UP){
             if(snake.getYDir() != 1){
                 snake.setYDir(-1);
