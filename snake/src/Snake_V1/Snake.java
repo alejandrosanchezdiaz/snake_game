@@ -42,6 +42,18 @@ public class Snake {
         }
     }
 
+    public boolean snakeCollision(){
+        int x = this.getX();
+        int y = this.getY();
+
+        for(int i = 1; i < snakePoints.size(); i++){
+            if(snakePoints.get(i).getX() == x && snakePoints.get(i).getY() == y){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean isMoving(){
         return isMoving;
     }
