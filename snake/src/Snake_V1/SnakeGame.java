@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+
 public class SnakeGame extends Applet implements Runnable, KeyListener {
 
     Graphics gfx;
@@ -25,8 +26,6 @@ public class SnakeGame extends Applet implements Runnable, KeyListener {
         gfx.setColor(Color.black);
         gfx.fillRect(0,0,400,400);
         snake.draw(gfx);
-
-
 
         g.drawImage(img,0,0,null);
     }

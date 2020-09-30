@@ -12,9 +12,6 @@ public class Snake {
 
     final int STARTSIZE = 20, STARTX = 150, STARTY = 150;
 
-
-
-
     public Snake(){
         snakePoints = new ArrayList<Point>();
         xDir = 0;
@@ -33,6 +30,14 @@ public class Snake {
             g.fillRect(p.getX(), p.getY(), 4,4);
         }
     }
+
+    public void move(){
+        Point temp = snakePoints.get(0);
+        Point last = snakePoints.get(snakePoints.size() - 1);
+        Point newStart = new Point(temp.getX() + xDir * 4, temp.getY() + yDir *4);
+    }
+
+
 
     public int getxDir() {
         return xDir;
