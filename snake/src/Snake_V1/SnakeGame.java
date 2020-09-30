@@ -17,6 +17,7 @@ public class SnakeGame extends Applet implements Runnable, KeyListener {
         this.resize(400, 400);
         img = createImage(400,400);
         gfx = img.getGraphics();
+        this.addKeyListener(this);
         snake = new Snake();
         thread = new Thread(this);
         thread.start();
@@ -40,33 +41,52 @@ public class SnakeGame extends Applet implements Runnable, KeyListener {
 
     public void run() {
         for(;;){
-
+            snake.move();
             this.repaint();
             try {
                 Thread.sleep(40);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
-        }
-    }
-
-    public void keyTyped(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_UP){
-
-        }
-        if(e.getKeyCode() == KeyEvent.VK_DOWN){
-
-        }
-        if(e.getKeyCode() == KeyEvent.VK_LEFT){
-
-        }
-        if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-
         }
     }
 
     public void keyPressed(KeyEvent e) {
+
+        if (!snake.isMoving()){
+            if(e.getKeyCode() == KeyEvent.VK_UP || e.getKeyCode() == KeyEvent.VK_RIGHT ||
+                    e.getKeyCode() == KeyEvent.VK_DOWN){
+                snake.setIsMoving(true);
+            }
+        }
+
+        if(e.getKeyCode() == KeyEvent.VK_UP){
+            if(snake.getYDir() != 1){
+                snake.setYDir(-1);
+                snake.setXDir(0);
+            }
+        }
+        if(e.getKeyCode() == KeyEvent.VK_DOWN){
+            if(snake.getYDir() != -1){
+                snake.setYDir(1);
+                snake.setXDir(0);
+            }
+        }
+        if(e.getKeyCode() == KeyEvent.VK_LEFT){
+            if(snake.getXDir() != 1){
+                snake.setXDir(-1);
+                snake.setYDir(0);
+            }
+        }
+        if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+            if(snake.getXDir() != 1){
+                snake.setXDir(1);
+                snake.setYDir(0);
+            }
+        }
+    }
+
+    public void keyTyped(KeyEvent e) {
 
     }
 
